@@ -1,0 +1,22 @@
+version: 2
+models:
+    - name: stg_postgres__addresses
+      description: "this is a dummy fillter for this file"
+
+    - name: stg_postgres__events
+      description: "this is a dummy fillter for this file"
+
+    - name: stg_postgres__orders
+      description: "this is a dummy fillter for this file"
+
+    - name: stg_postgres__order_items
+      description: "this is a dummy fillter for this file"
+
+    - name: stg_postgres__products
+      description: "this is a dummy fillter for this file"
+
+    - name: stg_postgres__promos
+      description: "this is a dummy fillter for this file"
+
+    - name: stg_postgres__users
+      description: "this is a dummy fillter for this file"
