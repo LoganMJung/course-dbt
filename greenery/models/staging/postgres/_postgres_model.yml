@@ -20,3 +20,6 @@ models:
 
     - name: stg_postgres__users
       description: "this is a dummy fillter for this file"
+    
+    - name: stg_postgres__superheroes
+      description: "this is a dummy fillter for this file"
