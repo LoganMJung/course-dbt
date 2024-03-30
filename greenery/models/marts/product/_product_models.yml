@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fact_page_views
+    description: "Filtered the events data to only look at page views."
+    columns:
+      - name: event_id
+        description: ""
+        tests:
+          - unique
+          - not_null
+
+      - name: created_at
+        description: ""
+
+      - name: session_id
+        description: ""
+
+      - name: user_id
+        description: ""
+
+      - name: page_url
+        description: ""

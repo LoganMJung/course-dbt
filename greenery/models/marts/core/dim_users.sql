@@ -5,9 +5,17 @@
 }}
 
 SELECT
-  u.user_guid,
-  u.email,
-  u.first_name,
-  u.last_name,
-  u.created_at_utc::DATE AS created_date,
-FROM {{ ref('stg_postgres__users') }} u
+    user_guid,
+    first_name,
+    last_name,
+    email,
+    phone_number,
+    created_at_utc,
+    address,
+    zipcode,
+    state,
+    country
+FROM
+    {{ ref('stg_postgres__users') }} u
+    LEFT JOIN {{ ref('stg_postgres__addresses') }} A
+    ON A.address = u.address_guid

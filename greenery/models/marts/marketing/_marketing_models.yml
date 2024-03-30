@@ -1,0 +1,101 @@
+version: 2
+
+models:
+  - name: int_sessions_event_agg
+    description: ""
+    columns:
+      - name: session_guid
+        description: ""
+
+      - name: created_at_utc
+        description: ""
+
+      - name: user_guid
+        description: ""
+
+      - name: page_view
+        description: ""
+
+      - name: add_to_cart
+        description: ""
+
+      - name: checkout
+        description: ""
+
+      - name: delete_from_cart
+        description: ""
+
+      - name: account_created_utc
+        description: ""
+
+      - name: package_shiped
+        description: ""
+
+  - name: fact_user_order
+    description: ""
+    columns:
+      - name: user_guid
+        description: ""
+
+      - name: order_guid
+        description: ""
+
+      - name: first_name
+        description: ""
+
+      - name: last_name
+        description: ""
+
+      - name: email
+        description: ""
+
+  - name: fact_user_sessions
+    description: ""
+    columns:
+      - name: session_guid
+        description: ""
+
+      - name: page_view
+        description: ""
+
+      - name: add_to_cart
+        description: ""
+
+      - name: checkout
+        description: ""
+
+      - name: delete_from_cart
+        description: ""
+
+      - name: account_created
+        description: ""
+
+      - name: package_shiped
+        description: ""
+
+      - name: id
+        description: ""
+
+      - name: user_guid
+        description: ""
+
+      - name: first_name
+        description: ""
+
+      - name: last_name
+        description: ""
+
+      - name: email
+        description: ""
+
+      - name: phone_number
+        description: ""
+
+      - name: created_at_utc
+        description: ""
+
+      - name: updated_at_utc
+        description: ""
+
+      - name: address_guid
+        description: ""
