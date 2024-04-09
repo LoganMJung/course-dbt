@@ -3,6 +3,25 @@
     materialized='table'
   )
 }}
+with orders as (
+  select * from {{ ref('stg_postgres__orders') }}
+),
+
+addresses as (
+  select * from {{ ref('stg_postgres__addresses') }}
+),
+
+promos as (
+  select * from {{ ref('stg_postgres__promos') }}
+),
+
+products_in_orders as (
+  select 
+    order_guid,
+    count(product_guid) as products_in_order
+  from {{ ref('stg_postgres__order_items') }} 
+  group by 1   
+)
 
 SELECT
     o.order_guid,
@@ -17,8 +36,8 @@ SELECT
     p.promo_guid,
     p.promo_discount
 FROM
-    {{ ref('stg_postgres__orders') }}
-    o
-    LEFT JOIN {{ ref('stg_postgres__promos') }}
-    p
-    ON o.promo_guid = p.promo_guid
+    orders as o
+    LEFT JOIN promos as p ON o.promo_guid = p.promo_guid
+    LEFT JOIN addresses as a on a.address_guid = o.address_guid
+    LEFT JOIN products_in_orders as pin on pin.order_guid = o.order_guid
+    
