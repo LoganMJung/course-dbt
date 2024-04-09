@@ -1,0 +1,8 @@
+macros:
+  - name: sum_if
+    description: aggregation function that sums a column with a specific value 
+    arguments: 
+      - name: column_name
+        description: 'target name'
+      - name: column_value
+        description: 'value'
