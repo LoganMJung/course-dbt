@@ -1,13 +1,14 @@
 {{
   config(
-    materialized='view'
+    materialized='table'
   )
 }}
 
 select 
-	address_id as address_guid
+	ADDRESS_ID as address_guid
 	,address
 	,zipcode
 	,state
 	,country
 from {{ source('postgres','addresses') }}
+

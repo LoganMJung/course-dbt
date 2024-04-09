@@ -38,6 +38,6 @@ SELECT
 FROM
     orders as o
     LEFT JOIN promos as p ON o.promo_guid = p.promo_guid
-    LEFT JOIN addresses as a on a.address_guid = o.address_guid
+    --LEFT JOIN addresses as a on a.address_guid = o.address_guid
     LEFT JOIN products_in_orders as pin on pin.order_guid = o.order_guid
     
